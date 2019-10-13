@@ -1,5 +1,8 @@
 # springboot-mysql-app
 
+[![CircleCI](https://circleci.com/gh/Kento75/springboot-mysql-app.svg?style=svg)](https://circleci.com/gh/Kento75/springboot-mysql-app)
+[![codecov](https://codecov.io/gh/Kento75/springboot-mysql-app/branch/master/graph/badge.svg)](https://codecov.io/gh/Kento75/springboot-mysql-app)
+
 ## MySQLコンテナセットアップ
 
 ```console
