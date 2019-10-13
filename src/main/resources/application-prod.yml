@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sfg_prod
+    username: sfg_prod_user
+    password: guru
+    platform: mysql
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    ## https://stackoverflow.com/questions/50322550/hibernate-dialect-for-mysql-8
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: mysql
+    show-sql: false

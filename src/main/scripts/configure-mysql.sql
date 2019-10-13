@@ -1,5 +1,5 @@
---CREATE DATABASE sfg_dev;
---CREATE DATABASE sfg_prod;
+CREATE DATABASE sfg_dev;
+CREATE DATABASE sfg_prod;
 
 CREATE USER 'sfg_dev_user'@'localhost' IDENTIFIED BY 'guru';
 CREATE USER 'sfg_prod_user'@'localhost' IDENTIFIED BY 'guru';
