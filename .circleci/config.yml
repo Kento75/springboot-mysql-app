@@ -1,8 +1,5 @@
 version: 2
 
-orbs:
-  codecov: codecov/codecov@1.0.5
-
 jobs:
   build:
     docker:
@@ -22,14 +19,14 @@ jobs:
       - run: mvn dependency:go-offline
 
       - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
 
-  test:
-    override:
-      - mvn integration-test
-      - mvn jacoco:report
-    post:
-      - mkdir -p $CIRCLE_ARTIFACTS/site/jacoco
-      - mv target/site/jacoco/ $CIRCLE_ARTIFACTS/site/jacoco
+        paths:
+          - ~/.m2
+        key: v1-dependencies-{{ checksum "pom.xml" }}
+
+      - run: mvn integration-test cobertura:cobertura
+
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path:  target
