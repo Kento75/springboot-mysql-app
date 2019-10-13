@@ -26,10 +26,10 @@ jobs:
             - ~/.m2
           key: v1-dependencies-{{ checksum "pom.xml" }}
 
+  test:
     override:
-      - run: mvn integration-test
-      - run: mvn jacoco:report
-
+      - mvn integration-test
+      - mvn jacoco:report
     post:
-      - run: mkdir -p $CIRCLE_ARTIFACTS/site/jacoco
-      - run: mv target/site/jacoco/ $CIRCLE_ARTIFACTS/site/jacoco
+      - mkdir -p $CIRCLE_ARTIFACTS/site/jacoco
+      - mv target/site/jacoco/ $CIRCLE_ARTIFACTS/site/jacoco
